@@ -20,13 +20,39 @@
                 <button><a href="meal-plans.html">meal plans</a></button>
                 
           </div>
-          <div id="content"  class="scale-in-center" style="flex-wrap: wrap;">  
-                    <img src="assets/UPDATED_Eatwell_guide_2016_FINAL_MAR23-01-e1459511294675.jpg" height="400" width"400">
-                    <img src="assets/beginner-fitness-final-65eb2b4b4a9cf.jpg" height="400" width"400">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/o_q9H_-0268?si=PD04UmMTjTJa16Lr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/xyQY8a-ng6g?si=8QEa1M83y3BmYFTm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      
+          <div id="content"  class="scale-in-center" style="justify-content: flex-start;
+          align-items:flex-start">  
+                    <img src="assets/gallery/beginner-fitness.jpg" id="gallery" height="400" width="400">
+                    <!-- <img src="assets/beginner-fitness-final-65eb2b4b4a9cf.jpg" height="400" width="400">
+                    <img src="assets/health-1.jpg"height="400" width="400">
+                    <img src="assets/long term benefits.png"height="400" width="400"> -->
+                    <div style="display: flex; justify-content: center; margin-top: 30px;">
+                        <button style="margin-right: 10px;" onclick="previous()">previous</button>
+                        <button onclick="next()">next</button>
+                    </div>
           </div>
+          
           </div>
         </main>
+        <script>
+            const gallery = document.getElementById('gallery')
+            let index = 0
+            const images = ['assets/gallery/beginner-fitness.jpg', 'assets/gallery/Eatwell_guide.jpg', 'assets/gallery/health-1.jpg', 'assets/gallery/long-benefits.png']
+
+            function next() {
+                index++
+                if(index >= images.length) {
+                    index = 0
+                }
+                gallery.src = images[index]
+            }
+            function previous() {
+                index--
+                if(index < 0) {
+                    index = 3
+                }
+                gallery.src = images[index]
+            }
+        </script>
     </body>
 </html>
